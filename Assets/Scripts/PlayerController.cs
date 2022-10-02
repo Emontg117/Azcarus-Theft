@@ -4,10 +4,21 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float hInput;
-    public float vInput;
+    #region Player Settings
 
+    [Header("Player Settings")]
+    [SerializeField] float playerSpeed;
+
+    #endregion
+
+    #region Private Variables
+    float hInput;
+    float vInput;
+    #endregion
+
+    #region Components
     Animator animator;
+    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -19,14 +30,21 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         PlayerMovement();
+        AnimationController();
     }
 
     void PlayerMovement() // Function for all player movment
     {
         // Getting the Horizontal and Vertical inputs
-        hInput = Input.GetAxis("Horizontal");
-        vInput = Input.GetAxis("Vertical");
+        hInput = Input.GetAxisRaw("Horizontal");
+        vInput = Input.GetAxisRaw("Vertical");
 
+        Vector2 movementVector = new Vector2(hInput, vInput).normalized; // Creates a Vector2 using the horizontal and vertical input and normalizes it so we don't run faster than we're supposed to
+        transform.Translate(movementVector * playerSpeed * Time.deltaTime); // Translates the player using the Vector2, playerSpeed, and multiplying it by Time.deltaTime to make it FrameRate independent
+    }
+    void AnimationController() // Controls all player animations based on variables set in the "Player" Animator
+    {
+        // If we're moving right, face right. If moving left, face left. If moving AT ALL, set moving to true or else set it to False
         if (hInput > 0)
         {
             animator.SetBool("facingRight", true);
@@ -45,7 +63,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isMoving", false);
         }
     }
-    void GetComponents()
+    void GetComponents() // Gets all needed components
     {
         animator = GetComponent<Animator>();
     }
