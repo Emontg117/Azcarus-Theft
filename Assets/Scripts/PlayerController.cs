@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     #region Private Variables
     float hInput;
     float vInput;
+    float screenWidth;
     #endregion
 
     #region Components
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         GetComponents();
+        screenWidth = Screen.width;
     }
 
     // Update is called once per frame
@@ -54,7 +56,15 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("facingRight", false);
         }
 
-        if (vInput != 0 || hInput != 0)
+        if(!animator.GetBool("isMoving") && Input.mousePosition.x > screenWidth / 2)
+        {
+            animator.SetBool("facingRight", true);
+        } else if (!animator.GetBool("isMoving") && Input.mousePosition.x < screenWidth / 2)
+        {
+            animator.SetBool("facingRight", false);
+        }
+
+            if (vInput != 0 || hInput != 0)
         {
             animator.SetBool("isMoving", true);
         }
