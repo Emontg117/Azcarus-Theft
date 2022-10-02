@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     #endregion
 
+    #region Objects
+    PauseController pauseController;
+    #endregion
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,8 +36,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerMovement();
-        AnimationController();
+        if (!pauseController.isPaused)
+        {
+            PlayerMovement();
+            AnimationController();
+        }
     }
 
     void PlayerMovement() // Function for all player movment
@@ -73,8 +81,9 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isMoving", false);
         }
     }
-    void GetComponents() // Gets all needed components
+    void GetComponents() // Gets all needed components and Objects
     {
         animator = GetComponent<Animator>();
+        pauseController = GameObject.FindGameObjectWithTag("PauseMenu").GetComponent<PauseController>();
     }
 }
