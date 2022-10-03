@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="left-down" width="30" height="20" tilewidth="32" tileheight="32" infinite="1" nextlayerid="2" nextobjectid="1">
+ <tileset firstgid="1" name="test" tilewidth="32" tileheight="32" tilecount="14" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image width="32" height="32" source="../../Environment/Floor/floor1.png"/>
+  </tile>
+  <tile id="1">
+   <image width="32" height="32" source="../../Environment/Floor/floor2.1.png"/>
+  </tile>
+  <tile id="2">
+   <image width="32" height="32" source="../../Environment/Floor/floor2.png"/>
+  </tile>
+  <tile id="3">
+   <image width="32" height="32" source="../../Environment/Floor/floor3.1.png"/>
+  </tile>
+  <tile id="4">
+   <image width="32" height="32" source="../../Environment/Floor/floor3.png"/>
+  </tile>
+  <tile id="5">
+   <image width="32" height="32" source="../../Environment/Floor/floor4(1).png"/>
+  </tile>
+  <tile id="6">
+   <image width="32" height="32" source="../../Environment/Floor/floor4(2).png"/>
+  </tile>
+  <tile id="7">
+   <image width="32" height="32" source="../../Environment/Floor/floor4(3).png"/>
+  </tile>
+  <tile id="8">
+   <image width="32" height="32" source="../../Environment/Floor/floor4(4).png"/>
+  </tile>
+  <tile id="9">
+   <image width="32" height="32" source="../../Environment/Floor/floor4(5).png"/>
+  </tile>
+  <tile id="10">
+   <image width="32" height="32" source="../../Environment/Floor/floor4(6).png"/>
+  </tile>
+  <tile id="11">
+   <image width="32" height="32" source="../../Environment/Floor/floor4(7).png"/>
+  </tile>
+  <tile id="12">
+   <image width="32" height="32" source="../../Environment/Floor/floor4(8).png"/>
+  </tile>
+  <tile id="13">
+   <image width="32" height="32" source="../../Environment/Floor/floor4(9).png"/>
+  </tile>
+  <wangsets>
+   <wangset name="Road" type="edge" tile="-1">
+    <wangcolor name="" color="#ff0000" tile="-1" probability="1"/>
+    <wangtile tileid="0" wangid="1,0,1,0,1,0,1,0"/>
+    <wangtile tileid="1" wangid="0,0,1,0,0,0,0,0"/>
+    <wangtile tileid="2" wangid="0,0,1,0,0,0,0,0"/>
+   </wangset>
+  </wangsets>
+ </tileset>
+ <layer id="1" name="Tile Layer 1" width="30" height="20">
+  <data encoding="csv">
+   <chunk x="0" y="0" width="16" height="16">
+2,1,1,1,3221225475,7,14,14,14,14,14,14,14,14,14,14,
+2,1,1,1,3221225475,7,14,14,14,14,14,14,14,14,14,14,
+2,1,1,1,3221225475,7,14,14,14,14,14,14,14,14,14,14,
+2,1,1,1,3221225475,7,14,14,14,14,14,14,14,14,14,14,
+3,1,1,1,3221225474,7,14,14,14,14,14,14,14,14,14,14,
+3,1,1,1,3221225474,7,14,14,14,14,14,14,14,14,14,14,
+2,1,1,1,3221225475,7,14,14,14,14,14,14,14,14,14,14,
+2,1,1,1,3221225475,3221225483,14,14,14,14,14,14,14,14,14,14,
+3,1,1,1,3221225474,3221225483,14,14,14,14,14,14,14,14,14,14,
+2,1,1,1,3221225475,3221225483,14,14,14,14,14,14,14,14,14,14,
+3,1,1,1,3221225474,3221225483,14,14,14,14,14,14,14,14,14,14,
+2,1,1,1,3221225475,3221225483,14,14,14,14,14,14,14,14,14,14,
+2,1,1,1,3221225475,7,14,14,14,14,14,14,14,14,14,14,
+2,1,1,1,3221225475,7,14,14,14,14,14,14,14,14,14,14,
+2,1,1,1,3221225475,7,14,14,14,14,14,14,14,14,14,14,
+2,1,1,1,3221225475,7,14,14,14,14,14,14,14,14,14,14
+</chunk>
+  </data>
+ </layer>
+</map>
